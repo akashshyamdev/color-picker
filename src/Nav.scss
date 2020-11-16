@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import './styles/variables';
+
+.nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	height: 6vh;
+
+	&__logo {
+		margin: 0 1rem 0 0;
+		font-size: 2rem;
+		background: #eceff1;
+		font-family: 'Permanent Marker', cursive;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		padding: 0.7rem;
+
+		a {
+			color: black;
+			text-decoration: none;
+		}
+	}
+
+	&__slider {
+		width: 25rem;
+		margin: 0 1rem;
+		display: inline-block;
+	}
+
+	&__slider-level {
+		font-size: 1rem;
+	}
+
+	&__dropdown {
+		margin-right: 3rem;
+	}
+
+	.MuiSelect-selectMenu {
+		width: 100%;
+		padding-left: 0.7rem;
+	}
+}
+
+.rc-slider {
+	&-track {
+		background-color: transparent;
+	}
+
+	&-rail {
+		height: 8px;
+	}
+
+	&-handle,
+	&-handle:active,
+	&-handle:hover,
+	&-handle:focus {
+		outline: none;
+		border: 2px solid green;
+		box-shadow: none;
+		background: green;
+		width: 13px;
+		height: 13px;
+		margin-top: -3px;
+	}
+}
+
+@media (max-width: $lg) {
+}
+
+@media (max-width: $md) {
+	.nav {
+		&__logo {
+			display: none;
+		}
+
+		&__slider {
+			width: 14rem;
+		}
+
+		&__slider-level {
+			margin-left: 2rem;
+		}
+	}
+}
+
+@media (max-width: $xs) {
+}

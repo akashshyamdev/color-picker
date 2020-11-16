@@ -1,0 +1,60 @@
+.mini-palette {
+	background-color: white;
+	border-radius: 0.5rem;
+	-webkit-border-radius: 0.5rem;
+	-moz-border-radius: 0.5rem;
+	-ms-border-radius: 0.5rem;
+	-o-border-radius: 0.5rem;
+	padding: 1rem;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+
+	&__colors {
+		height: 150px;
+		width: 100%;
+		border-radius: 0.5;
+		-webkit-border-radius: 0.5;
+		-moz-border-radius: 0.5;
+		-ms-border-radius: 0.5;
+		-o-border-radius: 0.5;
+		margin-bottom: 1rem;
+		overflow: hidden;
+	}
+
+	&__title {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 1rem;
+		position: relative;
+		font-weight: 700;
+		font-family: 'Nunito';
+		letter-spacing: 0.1rem;
+	}
+
+	&__emoji {
+		font-size: 1.5rem;
+	}
+
+	&__color-box {
+		height: 25%;
+		width: 20%;
+		display: inline-block;
+		margin: 0 auto;
+		margin-bottom: -3px;
+	}
+
+	&__delete-icon {
+		color: 'white';
+		width: '20px';
+		height: '20px';
+		padding: '10px';
+		z-index: 10;
+		opacity: 0;
+	}
+
+	&:hover svg {
+		opacity: 1;
+	}
+}
