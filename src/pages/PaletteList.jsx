@@ -17,7 +17,7 @@ class PaletteList extends Component {
 			<div className="palette-list">
 				<div className="palette-list__container">
 					<nav className="palette-list__nav">
-						<h1>Palette List</h1>
+						<h1>Palette List AASS</h1>
 						<Link to="/palette/new" className="palette-list__new">
 							New Palette
 						</Link>
@@ -26,13 +26,7 @@ class PaletteList extends Component {
 					<motion.div className="palette-list__palettes">
 						{palettes.map((palette) => (
 							<motion.li className="palette-list__palette-item" transition={{ duration: 2 }}>
-								<MiniPalette
-									{...palette}
-									key={palette.id}
-									id={palette.id}
-									handleClick={() => this.gotToPalette(palette.id)}
-									handleDeletePalette={deletePalette}
-								/>
+								<MiniPalette {...palette} key={palette.id} id={palette.id} handleClick={() => this.gotToPalette(palette.id)} handleDeletePalette={deletePalette} />
 							</motion.li>
 						))}
 					</motion.div>
