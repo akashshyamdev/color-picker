@@ -7,13 +7,13 @@ import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import { Button, ThemeProvider } from '@material-ui/core';
-import DragableColorList from './components/DragableColorList';
-import { arrayMove } from 'react-sortable-hoc';
-import { styles, theme } from './styles/NewPaletteStyles';
 import randomColor from 'randomcolor';
 import ntc from 'ntcjs';
-import PaletteFormNav from './components/PaletteFormNav';
-import ColorPickerForm from './components/ColorPickerForm';
+import { arrayMove } from 'react-sortable-hoc';
+import PaletteFormNav from '../components/PaletteFormNav';
+import DragableColorList from '../components/DragableColorList';
+import ColorPickerForm from '../components/ColorPickerForm';
+import { styles, theme } from './styles/NewPaletteStyles';
 
 class NewPaletteForm extends Component {
 	static defaultProps = {

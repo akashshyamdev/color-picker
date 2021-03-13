@@ -33,11 +33,7 @@ export default class PaletteFormNav extends Component {
 					color="default"
 				>
 					<Toolbar disableGutters={!open} style={{ color: 'black' }}>
-						<IconButton
-							color="grey"
-							onClick={handleDrawerOpen}
-							className={classNames(classes.menuButton, open && classes.hide)}
-						>
+						<IconButton color="grey" onClick={handleDrawerOpen} className={classNames(classes.menuButton, open && classes.hide)}>
 							<PaletteIcon />
 						</IconButton>
 
@@ -47,12 +43,7 @@ export default class PaletteFormNav extends Component {
 					</Toolbar>
 
 					<div className={classes.navButtons}>
-						<PaletteFormDialog
-							savePalette={savePalette}
-							palettes={palettes}
-							colors={colors}
-							history={history}
-						/>
+						<PaletteFormDialog savePalette={savePalette} palettes={palettes} colors={colors} history={history} />
 
 						<Link to="/" className={classes.navButton}>
 							<Button variant="outlined" color="secondary">

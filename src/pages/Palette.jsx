@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import 'rc-slider/assets/index.css';
-
-import ColorBox from './components/ColorBox.jsx';
-import Navbar from './components/Navbar';
-import styles from './styles/PaletteStyles';
-import PaletteFooter from './components/PaletteFooter';
 import { withStyles } from '@material-ui/styles';
+import ColorBox from './ColorBox.jsx';
+import Navbar from './Navbar';
+import PaletteFooter from './components/PaletteFooter';
+import styles from './styles/PaletteStyles';
+
 class Palette extends Component {
 	constructor(props) {
 		super(props);

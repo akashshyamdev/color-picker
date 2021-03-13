@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Link } from 'react-router-dom';
 
-import './ColorBox.scss';
-import styles from './styles/ColorBoxStyles';
+import '../styles/ColorBox.scss';
+import styles from '../styles/ColorBoxStyles';
 import { withStyles } from '@material-ui/styles';
 
 export class ColorBox extends Component {
@@ -29,18 +29,9 @@ export class ColorBox extends Component {
 		return (
 			<CopyToClipboard text={background} onCopy={this.changeCopyState}>
 				<div style={{ background }} className={`color-box${isLong ? ' color-box--long' : ' '}`}>
-					<div
-						style={{ background }}
-						className={`color-box__overlay ${
-							this.state.copied ? 'color-box__overlay--active' : ''
-						}`}
-					/>
+					<div style={{ background }} className={`color-box__overlay ${this.state.copied ? 'color-box__overlay--active' : ''}`} />
 
-					<div
-						className={`color-box__copy-message ${
-							this.state.copied ? 'color-box__copy-message--active' : ''
-						}`}
-					>
+					<div className={`color-box__copy-message ${this.state.copied ? 'color-box__copy-message--active' : ''}`}>
 						<h1>Copied to clipboard</h1>
 						<p className={classes.darkText}>{background}</p>
 					</div>

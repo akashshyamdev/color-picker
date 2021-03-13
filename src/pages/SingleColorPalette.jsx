@@ -1,9 +1,9 @@
 import { withStyles } from '@material-ui/styles';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import ColorBox from './components/ColorBox';
-import Navbar from './components/Navbar';
-import PaletteFooter from './components/PaletteFooter';
+import ColorBox from './ColorBox';
+import Navbar from './Navbar';
+import PaletteFooter from './PaletteFooter';
 import styles from './styles/PaletteStyles';
 
 class SingleColorPalette extends Component {
@@ -35,7 +35,9 @@ class SingleColorPalette extends Component {
 		const { paletteName, emoji, id } = this.props.palette;
 		const { classes } = this.props;
 
-		const colorBoxes = this._shades.map((color, i) => <ColorBox key={i} name={color.name} background={color[format]} showLink={false} isLong />);
+		const colorBoxes = this._shades.map((color, i) => (
+			<ColorBox key={i} name={color.name} background={color[format]} showLink={false} isLong />
+		));
 
 		return (
 			<div className={`${classes.palette}`}>

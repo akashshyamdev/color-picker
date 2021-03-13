@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import MiniPalette from './components/MiniPalette';
-import './styles/PaletteList.scss';
+import MiniPalette from './MiniPalette';
+
+import './PaletteList.scss';
 
 class PaletteList extends Component {
 	gotToPalette(id) {
@@ -25,7 +26,13 @@ class PaletteList extends Component {
 					<motion.div className="palette-list__palettes">
 						{palettes.map((palette) => (
 							<motion.li className="palette-list__palette-item" transition={{ duration: 2 }}>
-								<MiniPalette {...palette} key={palette.id} id={palette.id} handleClick={() => this.gotToPalette(palette.id)} handleDeletePalette={deletePalette} />
+								<MiniPalette
+									{...palette}
+									key={palette.id}
+									id={palette.id}
+									handleClick={() => this.gotToPalette(palette.id)}
+									handleDeletePalette={deletePalette}
+								/>
 							</motion.li>
 						))}
 					</motion.div>

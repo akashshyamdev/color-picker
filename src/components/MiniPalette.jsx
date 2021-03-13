@@ -1,8 +1,7 @@
 import DeleteIcon from '@material-ui/icons/Delete';
-import { motion } from 'framer-motion';
 import React from 'react';
 
-import './MiniPalette.scss';
+import '../styles/MiniPalette.scss';
 
 class MiniPalette extends React.Component {
 	constructor(props) {
@@ -19,13 +18,7 @@ class MiniPalette extends React.Component {
 	render() {
 		const { paletteName, emoji, colors, handleClick } = this.props;
 
-		const miniColorBoxes = colors.map((color) => (
-			<div
-				className="mini-palette__color-box"
-				style={{ backgroundColor: color.color }}
-				key={color.name}
-			></div>
-		));
+		const miniColorBoxes = colors.map((color) => <div className="mini-palette__color-box" style={{ backgroundColor: color.color }} key={color.name}></div>);
 
 		return (
 			<div className="mini-palette" onClick={handleClick}>

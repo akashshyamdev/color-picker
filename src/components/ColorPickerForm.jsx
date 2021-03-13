@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, ThemeProvider, withStyles } from '@material-ui/core';
 import { TextValidator, ValidatorForm } from 'react-material-ui-form-validator';
 import { ChromePicker } from 'react-color';
-import { styles, theme } from './styles/NewPaletteStyles';
+import { styles, theme } from '../styles/NewPaletteStyles';
 
 class ColorPickerForm extends Component {
 	constructor(props) {
@@ -19,13 +19,9 @@ class ColorPickerForm extends Component {
 	}
 
 	componentDidMount() {
-		ValidatorForm.addValidationRule('colorNameUnique', (value) =>
-			this.props.colors.every(({ name }) => name.toLowerCase() !== value.toLowerCase())
-		);
+		ValidatorForm.addValidationRule('colorNameUnique', (value) => this.props.colors.every(({ name }) => name.toLowerCase() !== value.toLowerCase()));
 
-		ValidatorForm.addValidationRule('colorUnique', (value) =>
-			this.props.colors.every(({ color }) => color !== this.state.currentColor)
-		);
+		ValidatorForm.addValidationRule('colorUnique', (value) => this.props.colors.every(({ color }) => color !== this.state.currentColor));
 	}
 
 	handleChange(e) {
@@ -52,11 +48,7 @@ class ColorPickerForm extends Component {
 		return (
 			<div className={classes.pickerForm}>
 				<ThemeProvider theme={theme}>
-					<ChromePicker
-						color={currentColor}
-						onChangeComplete={this.handleColorChange}
-						className={classes.picker}
-					/>
+					<ChromePicker color={currentColor} onChangeComplete={this.handleColorChange} className={classes.picker} />
 
 					<ValidatorForm onSubmit={this.handleSubmit} ref="form">
 						<TextValidator
@@ -64,11 +56,7 @@ class ColorPickerForm extends Component {
 							onChange={this.handleChange}
 							name="newColorName"
 							validators={['required', 'colorNameUnique', 'colorUnique']}
-							errorMessages={[
-								'This field is mandatory',
-								'Color name must be unique',
-								'Color already exists',
-							]}
+							errorMessages={['This field is mandatory', 'Color name must be unique', 'Color already exists']}
 							label="Color Name"
 							className={classes.colorInput}
 							variant="filled"

@@ -7,7 +7,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import slugify from 'slugify';
 import { withStyles } from '@material-ui/styles';
-import { styles, theme } from './styles/NewPaletteStyles';
+import { styles } from '../styles/NewPaletteStyles';
 import { DialogContentText } from '@material-ui/core';
 import 'emoji-mart/css/emoji-mart.css';
 import { Picker } from 'emoji-mart';
@@ -30,11 +30,7 @@ class PaletteFormDialog extends Component {
 	}
 
 	componentDidMount() {
-		ValidatorForm.addValidationRule('paletteNameUnique', (value) =>
-			this.props.palettes.every(
-				({ paletteName }) => paletteName.toLowerCase() !== value.toLowerCase()
-			)
-		);
+		ValidatorForm.addValidationRule('paletteNameUnique', (value) => this.props.palettes.every(({ paletteName }) => paletteName.toLowerCase() !== value.toLowerCase()));
 	}
 
 	handleOpen() {
@@ -84,9 +80,7 @@ class PaletteFormDialog extends Component {
 
 					<ValidatorForm onSubmit={this.showEmojiPicker}>
 						<DialogContent>
-							<DialogContentText style={{ marginTop: '-1.5rem' }}>
-								Please enter a name for your new palette. Make sure that it is unique
-							</DialogContentText>
+							<DialogContentText style={{ marginTop: '-1.5rem' }}>Please enter a name for your new palette. Make sure that it is unique</DialogContentText>
 
 							<TextValidator
 								label="Palette Name"
@@ -102,21 +96,11 @@ class PaletteFormDialog extends Component {
 						</DialogContent>
 
 						<DialogActions>
-							<Button
-								variant="outlined"
-								color="secondary"
-								onClick={this.handleClose}
-								className={classes.formBtn}
-							>
+							<Button variant="outlined" color="secondary" onClick={this.handleClose} className={classes.formBtn}>
 								Close
 							</Button>
 
-							<Button
-								variant="contained"
-								color="secondary"
-								type="submit"
-								className={classes.formBtn}
-							>
+							<Button variant="contained" color="secondary" type="submit" className={classes.formBtn}>
 								Save Palette
 							</Button>
 						</DialogActions>

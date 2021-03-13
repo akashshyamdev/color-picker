@@ -6,8 +6,7 @@ import Snackbar from '@material-ui/core/Snackbar';
 import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';
 import { Link } from 'react-router-dom';
-
-import './Nav.scss';
+import '../styles/Nav.scss';
 
 class Navbar extends Component {
 	constructor(props) {
@@ -40,13 +39,7 @@ class Navbar extends Component {
 					<div className="nav__slider-container">
 						<span className="nav__slider-level">Level: {level}</span>
 						<div className="nav__slider">
-							<Slider
-								defaultValue={level}
-								min={100}
-								max={900}
-								step="100"
-								onAfterChange={changeLevel}
-							/>
+							<Slider defaultValue={level} min={100} max={900} step="100" onAfterChange={changeLevel} />
 						</div>
 					</div>
 				)}
